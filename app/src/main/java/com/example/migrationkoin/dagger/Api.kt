@@ -1,7 +1,6 @@
 package com.example.migrationkoin.dagger
 
-import javax.inject.Inject
 
-class Api @Inject constructor() {
+class Api {
     fun login() = "Login efetuado com sucesso"
 }
