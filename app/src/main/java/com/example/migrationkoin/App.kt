@@ -8,11 +8,8 @@ import org.koin.core.context.startKoin
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
+
         startKoin {
-            // Koin Android logger
-            //inject Android context
-            androidContext(this@App)
-            // use modules
             modules(appModule)
         }
     }

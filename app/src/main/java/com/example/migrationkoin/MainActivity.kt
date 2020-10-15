@@ -19,10 +19,14 @@ class MainActivity : AppCompatActivity(), LoginView {
     lateinit var loginPresenter: LoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        DaggerLoginComponent.builder().loginModule(LoginModule(this@MainActivity))
+        val build = DaggerLoginComponent.builder().loginModule(LoginModule(this@MainActivity))
             .build()
+
+        build
             .inject(this@MainActivity)
+
+        build
+            .inject(loginPresenter.profileInteractorDagger.profileInteractor)
 
 
         super.onCreate(savedInstanceState)
